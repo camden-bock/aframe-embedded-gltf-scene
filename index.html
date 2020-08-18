@@ -19,7 +19,7 @@
       }
     </style>
     <div id="geologySampleViewer">
-        <a-scene embedded>
+        <a-scene embedded transparent>
           <a-assets>
              <!-- Use local asset referenecs for GitHub pages implementation (see readme to deploy)-->
              <a-asset-item id="sample" src="assets/samplerock.gltf"></a-asset-item>
@@ -30,7 +30,6 @@
 
            </a-assets>
            <a-entity camera look-controls orbit-controls="target: 0 1.6 0; minDistance: 0.3; maxDistance: 180; initialPosition: 0 1.6 .4; enablePan: false"></a-entity>
-           <a-sky color="lightblue"></a-sky>
 
            <!-- Using the asset management system.-->
           <a-gltf-model drag-rotate-component src="#sample" position="0 1.6 0"></a-gltf-model>
