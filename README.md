@@ -1,6 +1,6 @@
-# [GLTF Sample Viewer](https://camden-bock.github.io/aframe-geology-sample-viewer/)
+# [aframe-embedded-gltf-scene](https://camden-bock.github.io/aframe-geology-sample-viewer/)
 
-This is an embeddable gltf sample viewer using an a-frame scene and a-frame asset management.
+This is an embeddable gltf sample viewer using an a-frame scene and a-frame asset management.  
 
 Add the following to your ``head``
 ```html
@@ -9,7 +9,7 @@ Add the following to your ``head``
     <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script>
 ```
 
-If hositng through GitHub Pages add to Body:
+If hositng through GitHub Pages add to ``Body``:
 ```html
     <!-- Geology Sample Viewer AFRAME -->
     <style>
@@ -24,7 +24,6 @@ If hositng through GitHub Pages add to Body:
              <a-asset-item id="sample" src="assets/samplerock.gltf"></a-asset-item>
            </a-assets>
            <a-entity camera look-controls orbit-controls="target: 0 1.6 0; minDistance: 0.3; maxDistance: 180; initialPosition: 0 1.6 .4; enablePan: false"></a-entity>
-
            <!-- Using the asset management system.-->
           <a-gltf-model drag-rotate-component src="#sample" position="0 1.6 0"></a-gltf-model>
       </a-scene>
@@ -32,7 +31,7 @@ If hositng through GitHub Pages add to Body:
     <!-- end AFRAME -->
 ```
 
-If hosting through other service, add to Body:
+If hosting through other service (e.g. Brightspace), add to ``Body``:
 ```html
     <!-- Geology Sample Viewer AFRAME -->
     <style>
@@ -45,10 +44,8 @@ If hosting through other service, add to Body:
         <a-scene embedded transparent>
           <a-assets>
              <a-asset-item id="sample" src="https://rawcdn.githack.com/camden-bock/aframe-geology-sample-viewer/476892532fac364cde92d05f2f893859873b46d6/assets/samplerock.gltf"></a-asset-item>
-
            </a-assets>
            <a-entity camera look-controls orbit-controls="target: 0 1.6 0; minDistance: 0.3; maxDistance: 180; initialPosition: 0 1.6 .4; enablePan: false"></a-entity>
-
            <!-- Using the asset management system.-->
           <a-gltf-model drag-rotate-component src="#sample" position="0 1.6 0"></a-gltf-model>
       </a-scene>
@@ -56,8 +53,12 @@ If hosting through other service, add to Body:
     <!-- end AFRAME -->
 ```
 
-
 Compatability is confirmed with D2L Brightspace Course Managment - requires plaintext html editor (no WYSG)
+
+## Dependencies:
+ - Look-Controls
+ - Orbit-Controls
+ - GLTF-Viewer
 
 ## Getting Started
 
