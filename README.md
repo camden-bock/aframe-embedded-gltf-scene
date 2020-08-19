@@ -1,10 +1,63 @@
-# A-Frame Boilerplate
+# [GLTF Sample Viewer](https://camden-bock.github.io/aframe-geology-sample-viewer/)
 
-Boilerplate for creating WebVR scenes with [A-Frame](https://aframe.io).
+This is an embeddable gltf sample viewer using an a-frame scene and a-frame asset management.
 
-Alternatively, check out the [A-Frame Starter on
-glitch.com](https://glitch.com/~aframe) for a more interactive way on getting
-started.
+Add the following to your ``head``
+```html
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script>
+```
+
+If hositng through GitHub Pages add to Body:
+```html
+    <!-- Geology Sample Viewer AFRAME -->
+    <style>
+      #geologySampleViewer {
+        width:80%;
+        height:80%;
+      }
+    </style>
+    <div id="geologySampleViewer">
+        <a-scene embedded transparent>
+          <a-assets>
+             <a-asset-item id="sample" src="assets/samplerock.gltf"></a-asset-item>
+           </a-assets>
+           <a-entity camera look-controls orbit-controls="target: 0 1.6 0; minDistance: 0.3; maxDistance: 180; initialPosition: 0 1.6 .4; enablePan: false"></a-entity>
+
+           <!-- Using the asset management system.-->
+          <a-gltf-model drag-rotate-component src="#sample" position="0 1.6 0"></a-gltf-model>
+      </a-scene>
+    </div>
+    <!-- end AFRAME -->
+```
+
+If hosting through other service, add to Body:
+```html
+    <!-- Geology Sample Viewer AFRAME -->
+    <style>
+      #geologySampleViewer {
+        width:80%;
+        height:80%;
+      }
+    </style>
+    <div id="geologySampleViewer">
+        <a-scene embedded transparent>
+          <a-assets>
+             <a-asset-item id="sample" src="https://rawcdn.githack.com/camden-bock/aframe-geology-sample-viewer/476892532fac364cde92d05f2f893859873b46d6/assets/samplerock.gltf"></a-asset-item>
+
+           </a-assets>
+           <a-entity camera look-controls orbit-controls="target: 0 1.6 0; minDistance: 0.3; maxDistance: 180; initialPosition: 0 1.6 .4; enablePan: false"></a-entity>
+
+           <!-- Using the asset management system.-->
+          <a-gltf-model drag-rotate-component src="#sample" position="0 1.6 0"></a-gltf-model>
+      </a-scene>
+    </div>
+    <!-- end AFRAME -->
+```
+
+
+Compatability is confirmed with D2L Brightspace Course Managment - requires plaintext html editor (no WYSG)
 
 ## Getting Started
 
